@@ -11,4 +11,9 @@ export class Animal {
     }, 1000);
   }
 
+  thirst() {
+    setInterval(() => {
+      this.waterLevel;
+    }, 1000);
+  }
 }
