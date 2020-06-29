@@ -46,5 +46,12 @@ describe("Animal class", () => {
     expect(reusableAnimal.waterLevel).toBe(10);
   });
 
+  test('should call sleep method and add 8 to energy property', () => {
+    reusableAnimal.energy = 2;
+    reusableAnimal.sleep();
+    expect(reusableAnimal.energy).toBe(10);
+  });
+
+
 
 });

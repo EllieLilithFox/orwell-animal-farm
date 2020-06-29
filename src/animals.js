@@ -28,7 +28,10 @@ export class Animal {
   }
 
   water() {
-    
+    this.waterLevel += 8;
+  }
 
+  sleep() {
+    
   }
 }
