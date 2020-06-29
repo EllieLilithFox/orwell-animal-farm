@@ -22,4 +22,8 @@ export class Animal {
       this.energy--;
     }, 1000);
   }
+
+  feed() {
+    
+  }
 }

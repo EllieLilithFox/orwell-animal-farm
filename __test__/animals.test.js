@@ -34,4 +34,10 @@ describe("Animal class", () => {
     expect(reusableAnimal.energy).toEqual(4);
   });
 
+  test('should call feed method and add 8 to foodLevel property', () => {
+    reusableAnimal.foodLevel = 2;
+    reusableAnimal.feed();
+    expect(reusableAnimal.foodLevel).toBe(10);
+  })
+
 });
