@@ -3,6 +3,7 @@ export class Animal {
     this.foodLevel = 10;
     this.waterLevel = 10;
     this.energy = 10;
+    this.alive = "";
   }
 
   hunger() {
@@ -33,5 +34,15 @@ export class Animal {
 
   sleep() {
     this.energy += 10;
+  }
+
+  isAlive() {
+    setInterval(() => {
+      if (this.foodLevel > 0 && this.waterLevel > 0) {
+        this.alive;
+      } else {
+        this.alive;
+      }
+    }, 1001);
   }
 }
