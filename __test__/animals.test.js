@@ -52,7 +52,7 @@ describe("Animal class", () => {
     expect(reusableAnimal.energy).toBe(10);
   });
 
-  test('should call isAlive method that will return true or false depending on food and water Levels', () => {
+  test('should call isAlive method that will  true or false depending on food and water Levels', () => {
     reusableAnimal.isAlive();
     reusableAnimal.foodLevel = 0;
     jest.advanceTimersByTime(1002);
