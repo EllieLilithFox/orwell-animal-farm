@@ -14,11 +14,11 @@ An Orwell themed animal farm game where you care for different animal depending 
     * **Input Example:**
     * **Output Example:** horse = { foodLevel: 10, waterLevel: 10, energy: 10 }
 
-2. **Behavior:** Program will call hunger method on a set interval on animal classes which substracts one hunger
+2. **Behavior:** Program will call hunger method on a set interval on animal classes which subtracts one hunger
     * **Input Example:** horse.hunger()
     * **Output Example:** horse.foodLevel--
 
-3. **Behavior:** Program will call thirst method on a set interval on animal classes which substracts one waterLevel
+3. **Behavior:** Program will call thirst method on a set interval on animal classes which subtracts one waterLevel
     * **Input Example:** horse.thirst()
     * **Output Example:** horse.waterLevel--
 

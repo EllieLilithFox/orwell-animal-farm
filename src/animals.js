@@ -4,4 +4,9 @@ export class Animal {
     this.waterLevel = 10;
     this.energy = 10;
   }
+
+  hunger() {
+    
+
+  }
 }

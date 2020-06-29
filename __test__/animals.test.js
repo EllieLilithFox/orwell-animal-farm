@@ -2,6 +2,7 @@ import { Animal } from "../src/animals.js";
 
 describe("Animal class", () => {
   let reusableAnimal;
+  jest.useFakeTimers();
 
   beforeEach(() => {
     reusableAnimal = new Animal();
@@ -10,4 +11,14 @@ describe("Animal class", () => {
   test('should create a new animal class with foodLevel, waterLevel and energy properties', () => {
     expect(reusableAnimal).toEqual({ foodLevel: 10, waterLevel: 10, energy: 10 });
   });
+
+  test('Program will call hunger method on a set interval on animal classes which subtracts one hunger'), () => {
+    jest.advanceTimersByTime(1001);
+    reusableAnimal.hunger()
+    expect(reusableAnimal.foodLevel).toEqual(9);
+  }
+
+
+
+
 });
