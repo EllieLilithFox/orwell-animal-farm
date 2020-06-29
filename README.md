@@ -38,6 +38,12 @@ An Orwell themed animal farm game where you care for different animal depending 
     * **Input Example:** horse.sleep()
     * **Output Example:** horse.energy += 10
 
+8. **Behavior:** Program will have an isAlive property that will change the alive property to true or false depending on food and water Levels
+    * **Input Example:** horse.isAlive()
+    * **Output Example:** horse.isAlive = true
+
+
+
 ## Setup and Installation
 
 * Navigate to [Link](https://github.com/DeryckJackson/orwell-animal-farm)

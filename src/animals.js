@@ -41,7 +41,7 @@ export class Animal {
       if (this.foodLevel > 0 && this.waterLevel > 0) {
         this.alive = true;
       } else {
-        this.alive= false;
+        this.alive = false;
       }
     }, 1001);
   }

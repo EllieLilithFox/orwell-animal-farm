@@ -1,0 +1,22 @@
+.flexbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexbox-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexbox-center {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin: 10px 5px;
+}
+
+.jumbotron {
+  text-align: center;
+}
