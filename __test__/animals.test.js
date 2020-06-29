@@ -47,7 +47,7 @@ describe("Animal class", () => {
   });
 
   test('should call sleep method and add 8 to energy property', () => {
-    reusableAnimal.energy = 2;
+    reusableAnimal.energy = 0;
     reusableAnimal.sleep();
     expect(reusableAnimal.energy).toBe(10);
   });

@@ -32,6 +32,6 @@ export class Animal {
   }
 
   sleep() {
-    this.energy += 8;
+    this.energy += 10;
   }
 }
