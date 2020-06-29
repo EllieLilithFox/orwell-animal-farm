@@ -8,6 +8,7 @@ describe("Animal class", () => {
     reusableAnimal = new Animal();
     reusableAnimal.hunger();
     reusableAnimal.thirst();
+    reusableAnimal.fatigue();
   });
 
   afterEach(function () {
@@ -18,15 +19,19 @@ describe("Animal class", () => {
     expect(reusableAnimal).toEqual({ foodLevel: 10, waterLevel: 10, energy: 10 });
   });
 
-  test('Program will call hunger method on a set interval on animal classes which subtracts one hunger', () => {
+  test('should call hunger method on a set interval on animal classes which subtracts one foodLevel', () => {
     jest.advanceTimersByTime(3001);
     expect(reusableAnimal.foodLevel).toEqual(7);
   });
 
-  test('Program will call hunger method on a set interval on animal classes which subtracts one hunger', () => {
+  test('Program call thirst method on a set interval on animal classes which subtracts one waterLevel', () => {
     jest.advanceTimersByTime(4001);
     expect(reusableAnimal.waterLevel).toEqual(6);
   });
 
+  test('should call fatigue method on a set interval on animal classes which subtracts one energy', () => {
+    jest.advanceTimersByTime(6001);
+    expect(reusableAnimal.energy).toEqual(4);
+  });
 
 });

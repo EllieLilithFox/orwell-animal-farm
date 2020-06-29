@@ -13,7 +13,13 @@ export class Animal {
 
   thirst() {
     setInterval(() => {
-      this.waterLevel;
+      this.waterLevel--;
+    }, 1000);
+  }
+
+  fatigue() {
+    setInterval(() => {
+      this.energy;
     }, 1000);
   }
 }
