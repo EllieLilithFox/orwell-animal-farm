@@ -19,7 +19,7 @@ export class Animal {
 
   fatigue() {
     setInterval(() => {
-      this.energy;
+      this.energy--;
     }, 1000);
   }
 }
