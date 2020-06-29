@@ -24,6 +24,6 @@ export class Animal {
   }
 
   feed() {
-    
+    this.foodLevel += 8;
   }
 }
