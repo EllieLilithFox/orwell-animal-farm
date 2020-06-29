@@ -38,6 +38,13 @@ describe("Animal class", () => {
     reusableAnimal.foodLevel = 2;
     reusableAnimal.feed();
     expect(reusableAnimal.foodLevel).toBe(10);
-  })
+  });
+
+  test('should call water method and add 8 to waterLevel property', () => {
+    reusableAnimal.waterLevel = 2;
+    reusableAnimal.water();
+    expect(reusableAnimal.waterLevel).toBe(10);
+  });
+
 
 });
