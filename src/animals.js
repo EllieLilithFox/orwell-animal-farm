@@ -1,7 +1,7 @@
 export class Animal {
   constructor() {
-    this.foodLevel = 0;
-    this.waterLevel = 0;
-    this.energy = 0;
+    this.foodLevel = 10;
+    this.waterLevel = 10;
+    this.energy = 10;
   }
 }
