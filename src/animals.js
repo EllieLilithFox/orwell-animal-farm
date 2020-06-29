@@ -6,7 +6,9 @@ export class Animal {
   }
 
   hunger() {
-    
-
+    setInterval(() => {
+      this.foodLevel--;
+    }, 1000);
   }
+
 }
