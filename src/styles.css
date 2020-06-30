@@ -20,3 +20,8 @@
 .jumbotron {
   text-align: center;
 }
+
+.animal-gif {
+  margin-top: 10px;
+  max-width: 500px;
+}

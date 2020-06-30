@@ -13,7 +13,24 @@ function updateAnimalNeeds(animal) {
   }, 1000);
 }
 
+function getGif(gifId) {
+  let request = new XMLHttpRequest();
+  const url = `api.giphy.com/v1/gifs/${gifId}?api_key=${process.env.API_KEY}`;
 
+  request.onreadystatechange = () => {
+    if (this.readyState === 4 && this.status === 200) {
+      const response = JSON.parse(this.responseText);
+      getElements(response);
+    }
+  };
+
+  request.open("GET", url, true);
+  request.send();
+
+  const getElements = function(response) {
+    $("#gif").append(`<img class="animal-gif" src="${response.data.images.original_mp4.mp4}>`);
+  };
+}
 
 $(document).ready(function () {
   let animal = new Animal();
@@ -22,6 +39,7 @@ $(document).ready(function () {
   animal.fatigue();
   animal.isAlive();
   updateAnimalNeeds(animal);
+  // getGif("NCTyZu7dakFWM");
 
   $("#feed").click(function () {
     event.preventDefault();
@@ -29,6 +47,19 @@ $(document).ready(function () {
     $("#food-level").text(animal.foodLevel);
   });
 
+  $("#water").click(function () {
+    event.preventDefault();
+    animal.water();
+    $("#water-level").text(animal.waterLevel);
+  });
+
+  $("#sleep").click(function () {
+    event.preventDefault();
+    animal.sleep();
+    $("#energy").text(animal.energy);
+  });
+
+  
 });
 
 

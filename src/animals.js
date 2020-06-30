@@ -9,19 +9,19 @@ export class Animal {
   hunger() {
     setInterval(() => {
       this.foodLevel--;
-    }, 1000);
+    }, 4000);
   }
 
   thirst() {
     setInterval(() => {
       this.waterLevel--;
-    }, 1000);
+    }, 4000);
   }
 
   fatigue() {
     setInterval(() => {
       this.energy--;
-    }, 1000);
+    }, 4000);
   }
 
   feed() {
@@ -43,6 +43,6 @@ export class Animal {
       } else {
         this.alive = false;
       }
-    }, 1001);
+    }, 4001);
   }
 }
