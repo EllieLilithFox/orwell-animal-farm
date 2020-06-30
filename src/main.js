@@ -43,18 +43,19 @@ $(document).ready(function () {
   getGif("iWTnpqPv2N1PG", "water");
   getGif("xUA7aXQ2c3QNxKppqo", "sleep");
 
-  // $(".water-gif").hide();
-  // $(".sleep-gif").hide();
-  // $(".feed-gif").hide();
-
-
+  const fail = setInterval(() => {
+    if (!animal.alive) {
+      $("#gif, .buttons, .instructions, .status").hide();
+      $("#fail").show();
+      clearInterval(fail);
+    }
+  }, 500);
 
   $("#feed").click(function () {
     event.preventDefault();
     animal.feed();
     $("#food-level").text(animal.foodLevel);
-    $(".water-gif").hide();
-    $(".sleep-gif").hide();
+    $(".water-gif, .sleep-gif").hide();
     $(".feed-gif").show();
   });
 
@@ -62,8 +63,7 @@ $(document).ready(function () {
     event.preventDefault();
     animal.water();
     $("#water-level").text(animal.waterLevel);
-    $(".feed-gif").hide();
-    $(".sleep-gif").hide();
+    $(".feed-gif, .sleep-gif").hide();
     $(".water-gif").show();
   });
 
@@ -71,8 +71,7 @@ $(document).ready(function () {
     event.preventDefault();
     animal.sleep();
     $("#energy").text(animal.energy);
-    $(".water-gif").hide();
-    $(".feed-gif").hide();
+    $(".water-gif, .feed-gif").hide();
     $(".sleep-gif").show();
   });
 });

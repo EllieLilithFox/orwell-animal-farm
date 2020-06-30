@@ -39,5 +39,10 @@
   display: none;
 }
 
+#fail {
+  display: none;
+  text-align: center;
+}
+
 
 

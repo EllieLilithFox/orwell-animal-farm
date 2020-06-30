@@ -1,21 +1,3 @@
-// export class GifAPI {
-
-//   async getAPI(image) {
-//     try {
-//       let response = await fetch(`http://api.giphy.com/v1/gifs/${image}?api_key=${process.env.API_KEY}`);
-//       let jsonifiedResponse;
-//       if (response.ok && response.status == 200) {
-//         jsonifiedResponse = await response.json();
-//       } else {
-//         jsonifiedResponse = false;
-//       }
-//       return jsonifiedResponse;
-//     } catch {
-//       return false;
-//     }
-//   }
-// }
-
 export class Animal {
   constructor() {
     this.foodLevel = 10;
@@ -56,11 +38,11 @@ export class Animal {
 
   isAlive() {
     setInterval(() => {
-      if (this.foodLevel > 0 && this.waterLevel > 0) {
+      if (this.foodLevel > 0 && this.waterLevel > 0 && this.energy > 0) {
         this.alive = true;
       } else {
         this.alive = false;
       }
-    }, 4001);
+    }, 1000);
   }
 }

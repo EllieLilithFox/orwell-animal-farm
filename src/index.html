@@ -9,15 +9,11 @@
 <body>
   <div class="container">
     <h1 class="jumbotron">Orwell Animal Farm</h1>
-    <!-- <h2 class="clock">Clock Widget</h2>
-    <div class="clock">
-      clock widget
-    </div> -->
-    <div class="flexbox-center">
+    <div class="flexbox-center instructions">
       <h3>Click on the button below to care for the Orwell Animals</h3>
     </div>
     <div class="flexbox-center">
-      <div class="flexbox-row">
+      <div class="flexbox-row buttons">
         <button type="button" id="feed" class="btn btn-primary">Feed</button>
         <button type="button" id="water" class="btn btn-primary">Water</button>
         <button type="button" id="sleep" class="btn btn-primary">Sleep</button>
@@ -25,7 +21,7 @@
     </div>
     <div class="flexbox-center">
       <div class="flexbox card">
-        <div class="card-body">
+        <div class="card-body status">
           <p>Animal Status</p>
           <p>Food Level: <span id="food-level">10</span></p>
           <p>Water Level: <span id="water-level">10</span></p>
@@ -33,8 +29,11 @@
         </div>
       </div>
     </div>
+    <div id="fail">
+      <h1>Your animal died!</h1>
+    </div>
     <div class="flexbox-center" id="gif">
-      
+
     </div>
   </div>
 </body>
