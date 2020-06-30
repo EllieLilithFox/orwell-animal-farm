@@ -13,24 +13,25 @@ function updateAnimalNeeds(animal) {
   }, 1000);
 }
 
-function getGif(gifId) {
-  let request = new XMLHttpRequest();
-  const url = `api.giphy.com/v1/gifs/${gifId}?api_key=${process.env.API_KEY}`;
+// function getGif(gifId) {
+//   let request = new XMLHttpRequest();
+//   const url = `https://api.giphy.com/v1/gifs/${gifId}?api_key=${process.env.API_KEY}`;
 
-  request.onreadystatechange = () => {
-    if (this.readyState === 4 && this.status === 200) {
-      const response = JSON.parse(this.responseText);
-      getElements(response);
-    }
-  };
+//   request.onreadystatechange = function() {
+//     if (this.readyState === 4 && this.status === 200) {
+//       const response = JSON.parse(this.responseText);
+//       getElements(response);
+//     }
+//   };
 
-  request.open("GET", url, true);
-  request.send();
+//   request.open("GET", url, true);
+//   request.send();
 
-  const getElements = function(response) {
-    $("#gif").append(`<img class="animal-gif" src="${response.data.images.original_mp4.mp4}>`);
-  };
-}
+//   const getElements = function(response) {
+//     // $("#gif").append(`<img class="animal-gif" src="${response.data.images.original_mp4.mp4}>`);
+//     $(".showGif").html(`<img src="${response.body.data.images.original_mp4.mp4}></img>`);
+//   };
+// }
 
 $(document).ready(function () {
   let animal = new Animal();
@@ -43,7 +44,7 @@ $(document).ready(function () {
 
   $("#feed").click(function () {
     event.preventDefault();
-    animal.feed();
+    let image = animal.feed();
     $("#food-level").text(animal.foodLevel);
   });
 
@@ -58,6 +59,20 @@ $(document).ready(function () {
     animal.sleep();
     $("#energy").text(animal.energy);
   });
+
+(async () => {
+  let gifAPI = new GifAPI();
+  const response = await gitAPI.getImage(image);
+  getElements(response);
+
+})();
+
+const getElements = function(response) {
+  //     // $("#gif").append(`<img class="animal-gif" src="${response.data.images.original_mp4.mp4}>`);
+      $(".showGif").html(`<img src="${response.body.data.images.original_mp4.mp4}></img>`);
+  //   };
+
+  
 
   
 });
