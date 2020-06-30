@@ -1,20 +1,20 @@
-export class GifAPI {
+// export class GifAPI {
 
-  async getAPI(image) {
-    try {
-      let response = await fetch(`http://api.giphy.com/v1/gifs/${image}?api_key=${process.env.API_KEY}`);
-      let jsonifiedResponse;
-      if (response.ok && response.status == 200) {
-        jsonifiedResponse = await response.json();
-      } else {
-        jsonifiedResponse = false;
-      }
-      return jsonifiedResponse;
-    } catch {
-      return false;
-    }
-  }
-}
+//   async getAPI(image) {
+//     try {
+//       let response = await fetch(`http://api.giphy.com/v1/gifs/${image}?api_key=${process.env.API_KEY}`);
+//       let jsonifiedResponse;
+//       if (response.ok && response.status == 200) {
+//         jsonifiedResponse = await response.json();
+//       } else {
+//         jsonifiedResponse = false;
+//       }
+//       return jsonifiedResponse;
+//     } catch {
+//       return false;
+//     }
+//   }
+// }
 
 export class Animal {
   constructor() {

@@ -21,7 +21,23 @@
   text-align: center;
 }
 
-.animal-gif {
+.feed-gif {
   margin-top: 10px;
   max-width: 500px;
+  display: none;
 }
+
+.water-gif {
+  margin-top: 10px;
+  max-width: 500px;
+  display: none;
+}
+
+.sleep-gif {
+  margin-top: 10px;
+  max-width: 500px;
+  display: none;
+}
+
+
+

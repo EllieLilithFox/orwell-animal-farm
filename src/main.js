@@ -13,25 +13,24 @@ function updateAnimalNeeds(animal) {
   }, 1000);
 }
 
-// function getGif(gifId) {
-//   let request = new XMLHttpRequest();
-//   const url = `https://api.giphy.com/v1/gifs/${gifId}?api_key=${process.env.API_KEY}`;
+function getGif(gifId, classId) {
+  let request = new XMLHttpRequest();
+  const url = `https://api.giphy.com/v1/gifs/${gifId}?api_key=${process.env.API_KEY}`;
 
-//   request.onreadystatechange = function() {
-//     if (this.readyState === 4 && this.status === 200) {
-//       const response = JSON.parse(this.responseText);
-//       getElements(response);
-//     }
-//   };
+  request.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
+      const response = JSON.parse(this.responseText);
+      getElements(response);
+    }
+  };
 
-//   request.open("GET", url, true);
-//   request.send();
+  request.open("GET", url, true);
+  request.send();
 
-//   const getElements = function(response) {
-//     // $("#gif").append(`<img class="animal-gif" src="${response.data.images.original_mp4.mp4}>`);
-//     $(".showGif").html(`<img src="${response.body.data.images.original_mp4.mp4}></img>`);
-//   };
-// }
+  const getElements = function(response) {
+    $("#gif").append(`<video class="${classId}-gif" src="${response.data.images.original_mp4.mp4}" autoplay loop muted>`);
+  };
+}
 
 $(document).ready(function () {
   let animal = new Animal();
@@ -40,41 +39,40 @@ $(document).ready(function () {
   animal.fatigue();
   animal.isAlive();
   updateAnimalNeeds(animal);
-  // getGif("NCTyZu7dakFWM");
+  getGif("NCTyZu7dakFWM", "feed");
+  getGif("iWTnpqPv2N1PG", "water");
+  getGif("xUA7aXQ2c3QNxKppqo", "sleep");
+
+  // $(".water-gif").hide();
+  // $(".sleep-gif").hide();
+  // $(".feed-gif").hide();
+
+
 
   $("#feed").click(function () {
     event.preventDefault();
-    let image = animal.feed();
+    animal.feed();
     $("#food-level").text(animal.foodLevel);
+    $(".water-gif").hide();
+    $(".sleep-gif").hide();
+    $(".feed-gif").show();
   });
 
   $("#water").click(function () {
     event.preventDefault();
     animal.water();
     $("#water-level").text(animal.waterLevel);
+    $(".feed-gif").hide();
+    $(".sleep-gif").hide();
+    $(".water-gif").show();
   });
 
   $("#sleep").click(function () {
     event.preventDefault();
     animal.sleep();
     $("#energy").text(animal.energy);
+    $(".water-gif").hide();
+    $(".feed-gif").hide();
+    $(".sleep-gif").show();
   });
-
-(async () => {
-  let gifAPI = new GifAPI();
-  const response = await gitAPI.getImage(image);
-  getElements(response);
-
-})();
-
-const getElements = function(response) {
-  //     // $("#gif").append(`<img class="animal-gif" src="${response.data.images.original_mp4.mp4}>`);
-      $(".showGif").html(`<img src="${response.body.data.images.original_mp4.mp4}></img>`);
-  //   };
-
-  
-
-  
 });
-
-
